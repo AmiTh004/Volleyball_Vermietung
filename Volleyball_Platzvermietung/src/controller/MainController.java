@@ -8,9 +8,16 @@ import view.Output;
 
 public class MainController {
 
+    BuchungController bc;
+    GruppenController gc;
+    PlatzController vpc;
+    Output op;
+
     public MainController(){
-        BuchungController bc = new BuchungController(this);
-        Output op = new Output();
+        setBc(new BuchungController(this));
+        setGc(new GruppenController());
+        setVpc(new PlatzController());
+        setOp(new Output()) ;
         //Erzeugen der Volleyballplätze
         
     }
@@ -32,4 +39,34 @@ public class MainController {
         
 
     }
+
+    /**
+     * 
+     * SETTER UND GETTER
+     */
+
+     public void setBc(BuchungController bc) {
+         this.bc = bc;
+     }
+     public BuchungController getBc() {
+         return bc;
+     }
+     public void setGc(GruppenController gc) {
+         this.gc = gc;
+     }
+     public GruppenController getGc() {
+         return gc;
+     }
+     public void setVpc(PlatzController vpc) {
+         this.vpc = vpc;
+     }
+     public PlatzController getVpc() {
+         return vpc;
+     }
+     public void setOp(Output op) {
+         this.op = op;
+     }
+     public Output getOp() {
+         return op;
+     }
 }

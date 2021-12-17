@@ -7,7 +7,7 @@ import model.Buchung;
 
 public class BuchungController {
 
-    MainController _mc;
+    MainController mc;
 
     public BuchungController(MainController mc){
         setMc(mc);
@@ -16,15 +16,15 @@ public class BuchungController {
 
     public void demodata(){
         //Demodaten für Buchungen
-        Buchung b1 = new Buchung(getMc().demodata(), getMc().demodata(), (2021,03,30));
+        //Buchung b1 = new Buchung(getMc().demodata(), getMc().demodata(), 2021/03/30);
     }
     
     
 
     public void setMc(MainController mc) {
-        this._mc = mc;
+        this.mc = mc;
     }
     public MainController getMc() {
-        return _mc;
+        return mc;
     }
 }
