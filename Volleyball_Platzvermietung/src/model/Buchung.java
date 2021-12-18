@@ -1,18 +1,28 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.Date;
+import java.text.*;
 
 public class Buchung {
     Platz platz;
     Gruppe gruppe;
     String zeit;
-    LocalDate datum;
+    Date datum;
 
     public Buchung(Platz platz, Gruppe gruppe, String zeit, LocalDate datum) {
         setGruppe(gruppe);
         setPlatz(platz);
-        setZeit(zeit);
+        setZeit(zeit);       
         setDatum(datum);
+    }
+
+    public String createDate() throws ParseException {
+        
+        Date date = new SimpleDateFormat("dd.MM.yyyy").parse("21.02.2020");
+        System.out.println(date);
+        
+        return null;
     }
 
     public void setGruppe(Gruppe gruppe) {
@@ -33,10 +43,10 @@ public class Buchung {
     public String getZeit() {
         return zeit;
     }
-    public void setDatum(LocalDate datum) {
+    public void setDatum(Date datum) {
         this.datum = datum;
     }
-    public LocalDate getDatum() {
+    public Date getDatum() {
         return datum;
     }
 }
