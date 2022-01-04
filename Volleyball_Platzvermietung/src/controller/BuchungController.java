@@ -1,6 +1,7 @@
 package controller;
 
 import java.security.PKCS12Attribute;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import model.Buchung;
@@ -16,10 +17,10 @@ public class BuchungController {
         setBuchungen(new ArrayList<Buchung>());
     }
 
-    public void createDemoBuchung(){
+    public void createDemoBuchung() throws ParseException{
         //Demodaten für Buchungen
         //Auf alle Elemente wird mit Punktnotation verwiesen
-        getBuchungen().add(new Buchung(getMc().getVpc().getPlaetze().get(0), getMc().getGc().getGruppen().get(0), "13:30", (2020,03,20)));
+        getBuchungen().add(new Buchung(getMc().getVpc().getPlaetze().get(0), getMc().getGc().getGruppen().get(0), "13:30", "20.04.2022"));
         
     }
     

@@ -10,11 +10,11 @@ public class Buchung {
     String zeit;
     Date datum;
 
-    public Buchung(Platz platz, Gruppe gruppe, String zeit, LocalDate datum) {
+    public Buchung(Platz platz, Gruppe gruppe, String zeit, String datum) throws ParseException {
         setGruppe(gruppe);
         setPlatz(platz);
-        setZeit(zeit);       
-        setDatum(datum);
+        setZeit(zeit);   
+        setDatum(new SimpleDateFormat("dd.MM.yyyy").parse(datum));    
     }
 
     public String createDate() throws ParseException {
